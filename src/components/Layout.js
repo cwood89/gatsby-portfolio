@@ -5,7 +5,7 @@ import { ScrollingProvider } from 'react-scroll-section';
 import 'react-tippy/dist/tippy.css';
 import config from 'react-reveal/globals';
 import colors from '../../colors';
-import Helmet from './Helmet';
+import SEO from './Seo'
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <ThemeProvider theme={{ colors }}>
       <ScrollingProvider>
-        <Helmet />
+        <SEO />
         {children}
       </ScrollingProvider>
     </ThemeProvider>

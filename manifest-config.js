@@ -1,11 +1,11 @@
 const colors = require('./colors');
 
 module.exports = {
-  name: 'Mate Gatsby Starter',
-  short_name: 'Mate Gatsby Starter',
+  name: 'Christopher Wood',
+  short_name: 'My portfolio',
   start_url: '/',
   background_color: colors.background,
   theme_color: colors.primary,
   display: 'minimal-ui',
-  icon: 'media/icon.png',
+  icon: 'src/images/icon.png',
 };
