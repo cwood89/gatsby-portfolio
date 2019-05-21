@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import { Link } from 'rebass';
+import { Tooltip } from 'react-tippy';
+import Form from './Form'
 
 const IconButton = styled(Link)`
   transition: color 0.5s;
@@ -15,17 +17,29 @@ const IconButton = styled(Link)`
 `;
 
 const customStyles = {
+
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+  },
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    width: '40vw',
+    position: 'absolute',
+    margin: 'auto',
+    border: '2px solid #162CC6',
+    background: '#fff',
+    overflow: 'hidden',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px'
   }
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#___gatsby')
 
 class Contact extends React.Component {
@@ -37,17 +51,11 @@ class Contact extends React.Component {
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
     this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
   }
 
   closeModal() {
@@ -57,51 +65,24 @@ class Contact extends React.Component {
   render() {
     const { modalIsOpen } = this.state
     return (
-      <div>
-        <IconButton type="button" onClick={this.openModal}>
-          <FontAwesome name="envelope" />
-        </IconButton>
+      <>
+        <Tooltip title="Contact Me" position="bottom" trigger="mouseenter">
+          <IconButton type="button" onClick={this.openModal}>
+            <FontAwesome name="envelope" />
+          </IconButton>
+        </Tooltip>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Contact Form"
         >
-
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button type="button" onClick={this.closeModal}>close</button>
-          <div>I am a modal</div>
-          <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
-
-            <input type="hidden" name="bot-field" />
-
-            <div className="field half first">
-              <label htmlFor="name">
-                Name
-                <input type="text" name="name" id="name" required />
-              </label>
-            </div>
-            <div className="field half">
-              <label htmlFor="email">
-                Email
-                <input type="text" name="email" id="email" required />
-              </label>
-            </div>
-            <div className="field">
-              <label htmlFor="message">
-                Message
-                <textarea name="message" id="message" rows="6" required />
-              </label>
-            </div>
-            <ul className="actions">
-              <li><input type="submit" value="Send Message" className="special" /></li>
-              <li><input type="reset" value="Clear" /></li>
-            </ul>
-          </form>
+          <h2>Say Hey</h2>
+          <Form />
 
         </Modal>
-      </div>
+      </>
     );
   }
 }
