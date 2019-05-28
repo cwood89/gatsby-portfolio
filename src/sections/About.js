@@ -37,7 +37,7 @@ const aboutContent = ` Hi, my name is Christopher Wood. 🌴
   I'm a recent graduate from the Full Stack Coding BootCamp at UNC Charlotte.
 My bootcamp experience was tough but extremely rewarding. I developed a passion 
 for code and realized how far that passion has allowed me to push myself. The
-more I learn, the more my passion grows, and the constant learning is whats 
+more I learn, the more my passion grows, and the constant learning is what's 
 going to keep me hooked forever. 
 
   I've learned so much from so many people in my coding journey and I plan on paying
