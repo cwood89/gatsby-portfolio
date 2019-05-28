@@ -37,6 +37,7 @@
     "styled-components": "^4.0.2"
   },
   "devDependencies": {
+    "husky": "^2.3.0",
     "chalk": "^2.4.1",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
