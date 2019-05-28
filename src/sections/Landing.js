@@ -7,7 +7,7 @@ import SocialLink from '../components/SocialLink';
 import MouseIcon from '../components/MouseIcon';
 import Triangle from '../components/Triangle';
 import Resume from '../ChrisWoodResume.pdf';
-import Contact from '../components/Contact';
+import Contact from './Contact';
 
 const Background = () => (
   <div>

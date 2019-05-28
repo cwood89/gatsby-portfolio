@@ -1,7 +1,9 @@
+import path from "path"
+
 module.exports = {
   siteMetadata: {
     title: `Chris Wood`,
-    description: `Webdeveloper Portfolio`,
+    description: `Web developer Portfolio`,
     author: `Chris Wood`,
   },
   plugins: [
@@ -10,7 +12,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import Modal from "react-modal";
 import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import { Link } from 'rebass';
 import { Tooltip } from 'react-tippy';
-import Form from './Form'
+import Form from '../components/Form';
+import Section from '../components/Section';
 
 const IconButton = styled(Link)`
   transition: color 0.5s;
@@ -24,17 +25,19 @@ const customStyles = {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   content: {
+    webkitBoxShadow: '0px 13px 26px 0px rgba(0,0,0,0.7)',
+    boxShadow: '0px 13px 26px 0px rgba(0,0,0,0.7)',
     width: '40vw',
     position: 'absolute',
     margin: 'auto',
-    border: '2px solid #162CC6',
-    background: '#fff',
+    border: 'none',
+    borderRadius: '8px',
+    background: '#FFFFFF',
     overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
-    borderRadius: '4px',
     outline: 'none',
     padding: '20px'
   }
@@ -78,7 +81,8 @@ class Contact extends React.Component {
           style={customStyles}
           contentLabel="Contact Form"
         >
-          <h2>Say Hey</h2>
+          <Section.Header name="Contact Me" icon="✉️" label="person" />
+          <h3>Im looking for any opportunity to learn and grow as a developer.</h3>
           <Form />
 
         </Modal>

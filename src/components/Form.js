@@ -1,5 +1,31 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Section from './Section';
+import Triangle from './Triangle';
+
+const Background = () => (
+  <div>
+    <Triangle
+      color="secondaryLight"
+      height={['50vh', '20vh']}
+      width={['50vw', '50vw']}
+      invertY
+    />
+
+    <Triangle
+      color="primaryDark"
+      height={['20vh', '40vh']}
+      width={['75vw', '70vw']}
+      invertX
+    />
+
+    <Triangle
+      color="backgroundDark"
+      height={['25vh', '20vh']}
+      width={['100vw', '100vw']}
+    />
+  </div>
+);
 
 const Fieldset = styled.fieldset`
   padding: 0;
@@ -7,73 +33,70 @@ const Fieldset = styled.fieldset`
   border: 0;
   
   & + & {
-    margin-top: 24px;
+    margin-top: 5px;
   }
 `
 const Label = styled.label` 
   margin-bottom: 8px;
   display: block;
-  color: #2b2e4a;
+  color: #8EE4AF;
 }
 `
 const Input = styled.input`
-padding: 8px;
+padding: 6px;
   width: 100%;
   border-top: 0;
   border-right: 0;
-  border-bottom: 1px solid #bdc3c7;
+  border-bottom: 1px solid #8EE4AF;
   border-left: 0;
   transition: border-bottom-color .15s ease-in;
   
   &:focus {
     outline: 0;
-    border-bottom-color: #3fc1c9;
+    border-bottom-color: #2D7466;
   }
 `
 const TextArea = styled.textarea`
+margin-bottom: 10px;
 padding: 8px;
-  width: 100%;
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 1px solid #bdc3c7;
-  border-left: 0;
-  transition: border-bottom-color .15s ease-in;
-  resize: vertical;
+width: 100%;
+border-top: 0;
+border-right: 0;
+border-bottom: 1px solid #8EE4AF;
+border-left: 0;
+transition: border-bottom-color .15s ease-in;
+resize: vertical;
 
-
-  
-  &:focus {
-    outline: 0;
-    border-bottom-color: #3fc1c9;
-  }
+&:focus {
+  outline: 0;
+  border-bottom-color: #2D7466;
+    
+}
 `
 
 const StyledButton = styled.input`
-  margin-right: auto;
+  display:block;
   margin-left: auto;
-  display: block;
+  margin-right: auto;
+  margin-top: 30px;
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
   padding: 8px 16px;
   font-size: 16px;
-  color: #fff;
-  background-color: #3fc1c9;
+  color: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.secondaryLight};
   border: 0;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: background-color .15s ease-in;
-  
-  &:focus:active {
-    background-color: darken(#3fc1c9, 8%);
-  }
-  
-  &:focus {
-    outline: 0;
-  }
-  
+  border-radius: 4px;
+  width: 40%;
+
   &:hover {
-    background-color: lighten(#3fc1c9, 15%);
+    background: ${props => props.theme.colors.primaryLight};
+    transition-property: background;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 `
 const Form = () => (
+
   <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
 
     <input type="hidden" name="bot-field" />
@@ -93,15 +116,16 @@ const Form = () => (
     <Fieldset>
       <Label htmlFor="message">
         Message
-        <TextArea name="message" id="message" rows="6" required />
+        <TextArea name="message" id="message" rows="12" required />
       </Label>
     </Fieldset>
-    <StyledButton type="submit" value="Send Message" className="special" />
-
+    <StyledButton type="submit" value="Send" />
   </form>
+
 )
 
 const StyledForm = styled(Form)`
+height: 100%;
 margin-right: auto;
 margin-left: auto;
 max-width: 320px;
