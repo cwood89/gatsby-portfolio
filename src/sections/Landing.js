@@ -42,7 +42,7 @@ const Background = () => (
 const roles = [
   "Creative \u{1f3a8}",
   "Driven \u{1f947}",
-  "Passionate \u{1f4bb}"
+  "Passionate \u{1f525}"
 ]
 
 const LandingPage = () => (
