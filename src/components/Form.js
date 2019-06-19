@@ -1,31 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Section from './Section';
-import Triangle from './Triangle';
-
-const Background = () => (
-  <div>
-    <Triangle
-      color="secondaryLight"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertY
-    />
-
-    <Triangle
-      color="primaryDark"
-      height={['20vh', '40vh']}
-      width={['75vw', '70vw']}
-      invertX
-    />
-
-    <Triangle
-      color="backgroundDark"
-      height={['25vh', '20vh']}
-      width={['100vw', '100vw']}
-    />
-  </div>
-);
 
 const Fieldset = styled.fieldset`
   padding: 0;
@@ -97,9 +71,9 @@ const StyledButton = styled.input`
 `
 const Form = () => (
 
-  <form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
+  <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
 
-    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value="contact" />
 
     <Fieldset>
       <Label htmlFor="name">
