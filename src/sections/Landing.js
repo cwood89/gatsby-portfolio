@@ -93,6 +93,9 @@ const LandingPage = () => (
 
         <Box mx={3} fontSize={[5, 6, 6]}>
           <Contact />
+          <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+          </form>
         </Box>
 
         <Box mx={3} fontSize={[5, 6, 6]}>
