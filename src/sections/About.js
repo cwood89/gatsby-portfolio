@@ -44,9 +44,15 @@ going to keep me hooked forever.
 it forward. I hope to one day use my skills to help people and make a difference in 
 the world.
 
-  I've spent the last two years working in a team environment and have become one of 
-the top performers in my position. I'd be a great asset and would immediately bring 
-value to any team.`
+Feel free to email me at: **ctwood89(at)gmail(dot)com**
+
+  Some of my skills 💪:
+
+  - [MongoDB](https://www.mongodb.com/) - a document oriented database program.
+  - [Express](https://expressjs.com//) - a web framework for node.
+  - [React](https://reactjs.org/) - a frontend javascript libary.
+  - [Node](https://nodejs.org/en/) - an enviroment which uses javascript to write server side code.
+`
 
 const ProfilePicture = styled(Image)`
   border-radius: 50%;
@@ -75,7 +81,6 @@ const About = () => (
     `
       }
       render={data => {
-        console.log(data.file.childImageSharp.fixed.srcSet);
         return (
           <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
             <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
