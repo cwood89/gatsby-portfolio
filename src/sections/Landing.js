@@ -95,6 +95,9 @@ const LandingPage = () => (
           <Contact />
           <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="name" />
+            <input type="hidden" name="email" />
+            <input type="hidden" name="message" />
           </form>
         </Box>
 
