@@ -50,10 +50,9 @@ Feel free to email me at: **ctwood89(at)gmail(dot)com**
 
   - [MongoDB](https://www.mongodb.com/) - a document oriented database program.
   - [Express](https://expressjs.com//) - a web framework for node.
-  - [React](https://reactjs.org/) - a frontend javascript libary.
-  - [Node](https://nodejs.org/en/) - an enviroment which uses javascript to write server side code.
+  - [React](https://reactjs.org/) - a front end JavaScript library.
+  - [Node](https://nodejs.org/en/) - an environment which uses JavaScript to write server side code.
 `
-
 const ProfilePicture = styled(Image)`
   border-radius: 50%;
   transition: all 0.25s ease-out;
